@@ -1,0 +1,28 @@
+// goCartAI Raindrop Manifest
+// AI Shopping Assistant Backend on LiquidMetal AI's Raindrop Platform
+
+application "gocart-ai" {
+
+  // === Environment Variables ===
+  env "GROQ_API_KEY" {
+    secret = true
+  }
+
+  env "SERPAPI_KEY" {
+    secret = true
+  }
+
+  env "ELEVENLABS_API_KEY" {
+    secret = true
+  }
+
+  // === HTTP Services ===
+  
+  // Main API service for goCart AI Agent
+  service "api" {
+    visibility = "public"
+    domain {
+      cname = "gocart-api"
+    }
+  }
+}
